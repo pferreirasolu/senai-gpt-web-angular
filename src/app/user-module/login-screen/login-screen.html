@@ -3,25 +3,28 @@
 
 </header>
 
-<main class ="page-container"> <!-- Caixa maior-->
+<main class="page-container"> <!-- Caixa maior-->
     <div class="robo-image">
     </div>
 
     <div class="login-container" [formGroup]="loginForm">
-
         <img class="logo" src="imgs/Chat.png" alt="Logo do senai GPT">
         <h1 Class="titulo">Login</h1>
 
         <input class="inpt" type="email" placeholder="Insira o e-mail" formControlName="email">
-        <input class="inpt" type="password" placeholder="Insira a senha" formControlName ="password">
+        <span class="error-message">{{emailErrorMessage}}</span>
+
+        <input class="inpt" type="password" placeholder="Insira a senha" formControlName="password">
+        <span class="error-message">{{passwordErrorMessage}}</span>
 
         <button (click)="onLoginClick()">Entrar</button>
-
+        <span class="message-success" style="color: green;">{{successLogin}}</span>
+        <span class="message-error"  style="color: red;">{{incorrectCredentials}}</span>
     </div>
 
 </main>
 
-    <footer>
+<footer>
 
 
-    </footer>
+</footer>
