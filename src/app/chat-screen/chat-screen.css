@@ -1,0 +1,155 @@
+
+.page-container{
+    width: 100vw;/*Largura da tela*/
+    height:100vh;/*Altura da tela*/
+    display: flex;
+}
+
+.side-bar{
+    width: 310px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #1C1C1C1A ;
+    margin-top: 16px;
+    padding: 20px;
+}
+.menu-top{
+    width: 282px;
+    height: 236px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: left;
+    font-size: 14px;
+ }
+
+ .menu-top a {
+    text-decoration: none;
+    color: black;
+    margin-top: 16px;
+    margin-left: 20px;
+ }
+
+ .menu-down{
+    width: 282px;
+    height: 236px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: left;
+    font-size: 14px;
+    
+ }
+
+ .menu-down a{
+    text-decoration: none;
+    color: black;
+    margin-bottom: 4px;
+    margin-top: 16px;
+    padding-left: 20px;
+ }
+
+ .button{
+    background-color:#000000;
+    width: 242px;
+    height: 40px;
+    color: #fffefe;
+    display: flex;
+    border-radius: 10px;
+    font-size: 18px;
+    align-items:  center;
+    justify-content: center;
+ 
+}
+
+.central-panel{
+    width: 100vw;/*Largura da tela*/
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    background-image: url("/imgs/Chat.png");
+    width: 446px;
+    height: 101px;
+    background-size: cover;
+    margin-bottom: 16px;
+
+}
+
+.dicas-container{
+    display: flex;
+    margin-top: 20px;
+    max-width: 75%;
+}
+
+
+.dicas-item{
+
+    margin-right: 40px;
+    display:  flex;
+    flex-direction: column;
+    align-items:  center;
+
+}
+
+
+.dicas-item p {
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    background-color: #F7F9FB;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+
+.dicas-item h2 {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    }
+
+.message{
+    height: 40px;
+    width: 40%;
+    margin-top: 70px;
+    display: flex;
+    gap: 15px;
+    align-items:  center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #F7F9FB
+
+
+
+}
+
+.message button{
+    background: none;
+    border:  none;
+    cursor: pointer;
+    font-size: 18px;
+
+
+
+
+}
+
+.message input{
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+
+
+}
