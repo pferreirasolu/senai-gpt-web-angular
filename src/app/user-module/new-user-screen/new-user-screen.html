@@ -12,6 +12,8 @@
         <h1 Class="titulo">Novo Usuário</h1>
         
         <input class="inpt" type="text" placeholder="Insira o nome do usuário" formControlName="newUser">
+        <span class="erro-message" style="color: red;">{{nameErrorMessage}}</span>
+
         <input class="inpt" type="email" placeholder="Insira o e-mail" formControlName="email">
         <input class="inpt" type="password" placeholder="Insira a senha" formControlName="password">
         <input class="inpt" type="password" placeholder="confirme a senha" formControlName="newPassword">

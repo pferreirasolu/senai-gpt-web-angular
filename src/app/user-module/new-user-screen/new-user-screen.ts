@@ -11,6 +11,12 @@ export class NewUserScreen {
 
   newUserScreenLoginForm: FormGroup;
 
+  nameErrorMessage: string;
+  emailUser: string;
+  passwordErrorMessage: string;
+  newPasswordErrorMessage: string;
+
+
 
   constructor(private fb: FormBuilder) {
 
@@ -21,13 +27,28 @@ export class NewUserScreen {
       newPassword: ["", [Validators.required]]
     })
 
-
+    this.nameErrorMessage ="";
+    this.emailUser ="";
+    this.passwordErrorMessage="";
+    this.newPasswordErrorMessage="";
 
   }
+
 
     async onCadastro() {
         const token = localStorage.getItem("meuToken");
 
+        if (this.newUserScreenLoginForm.value.name =="") {
+          this.nameErrorMessage ="Email do usuario nao pode ser em branco";
+          }
+
+        if (this.newUserScreenLoginForm.value.email =="") {
+          this.nameErrorMessage ="Senha do usuario nao pode ser em branco";
+          }
+        if (this.newUserScreenLoginForm.value.password =="") {
+          this.nameErrorMessage ="Confirmação de senha nao pode ser em branco";
+          }
+          
     let response = await fetch("https://senai-gpt-api.azurewebsites.net/users", {
         method: "POST",
         headers: {
@@ -41,9 +62,6 @@ export class NewUserScreen {
           newPassword: this.newUserScreenLoginForm.value.newPassword
         })
       });
-
-
-
     }
 
   }

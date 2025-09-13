@@ -34,11 +34,6 @@ incorrectCredentials:string;
 
 
   async onLoginClick() {
-    this.passwordErrorMessage ="";
-    this.emailErrorMessage="";
-    this.successLogin = "";
-    this.incorrectCredentials ="";
-
     let response = await fetch("https://senai-gpt-api.azurewebsites.net/login", {
       method: "POST",
       headers: {
