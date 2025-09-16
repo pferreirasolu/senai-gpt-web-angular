@@ -3,9 +3,9 @@
     <aside class="side-bar">
             <div class="menu-top">
                 <button class="button"> + New chat</button>
-                <a href=""><i class="fa-regular fa-message"></i> Al Chat Tool Ethics</a>
-                <a href=""><i class="fa-regular fa-message"></i> Al Chat Tool Impact width</a>
-                <a href=""><i class="fa-regular fa-message"></i> New Chat</a>
+                 <a href="" *ngFor="let chat of chats"><i class="fa-solid fa-trash-can"></i>
+                {{ chat.chatTitle}}</a>
+
 
             </div>
             <div class="menu-down">
