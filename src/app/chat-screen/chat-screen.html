@@ -1,21 +1,26 @@
 <div class="page-container">
 
     <aside class="side-bar">
-            <div class="menu-top">
-                <button class="button"> + New chat</button>
-                 <a href="" *ngFor="let chat of chats"><i class="fa-solid fa-trash-can"></i>
-                {{ chat.chatTitle}}</a>
+        <div class="menu-top">
+            <button class="button">+ New chat</button>
+
+            @for (chat of chats; track $index){
+            <button class="btn" (click)="onChatClick(chat)">
+                <i class="fa-solid fa-trash-can"></i>
+                {{ chat.chatTitle }}
+            </button>
+            }
 
 
-            </div>
-            <div class="menu-down">
-                <a href=""><i class="fa-solid fa-trash-can"></i> Clear conversations</a>
-                <a href=""><i class="fa-regular fa-sun"></i>Light mode</a>
-                <a href=""><i class="fa-solid fa-user"></i>My account</a>
-                <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i>Updates & FAQ</a>
-                <a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+        </div>
+        <div class="menu-down">
+            <a href=""><i class="fa-solid fa-trash-can"></i> Clear conversations</a>
+            <a href=""><i class="fa-regular fa-sun"></i>Light mode</a>
+            <a href=""><i class="fa-solid fa-user"></i>My account</a>
+            <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i>Updates & FAQ</a>
+            <a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
 
-            </div>
+        </div>
 
 
     </aside>
@@ -63,7 +68,7 @@
         </div>
 
         <div class="message">
-      
+
 
             <button>
                 <i class="fa-solid fa-image"></i>

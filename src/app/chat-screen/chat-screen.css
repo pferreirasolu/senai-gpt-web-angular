@@ -150,6 +150,12 @@
     background: none;
     border: none;
     outline: none;
+}
 
-
+.btn {
+    display: flex;
+background: none;
+border: none;
+margin-left: 20px;
+margin-top: 20px;
 }
