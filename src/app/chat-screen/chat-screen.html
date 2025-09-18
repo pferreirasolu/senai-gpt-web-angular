@@ -27,6 +27,8 @@
 
     <main class="central-panel">
 
+        @if (chatSelecionado == null) {
+
         <div class="logo"></div>
 
         <div class="dicas-container">
@@ -67,6 +69,30 @@
 
         </div>
 
+        }
+
+        @if (chatSelecionado != null) {
+
+        <div class="chat-container">
+
+            <div class="chat-header">
+                <h2>
+                    {{ chatSelecionado.chatTitle}}
+                </h2>
+
+            </div>
+
+            <div class="chat-messages">
+                @for (msg of messages; track $index){
+                <p class="message-item" [class.chatbot]="msg.userId == 'chatbot'">{{ msg.text }}</p>
+
+                }
+            </div>
+
+
+        </div>
+        }
+
         <div class="message">
 
 
@@ -74,13 +100,13 @@
                 <i class="fa-solid fa-image"></i>
             </button>
 
-            <input type="text" placeholder="Type your message">
+            <input [formControl]="userMessage" type="text" placeholder="Type your message">
             <button>
                 <i class="fa-solid fa-microphone"></i>
             </button>
 
             <button>
-                <i class="fa-solid fa-paper-plane"></i>
+                <i class="fa-solid fa-paper-plane" (click)="SendMessage()"></i>
             </button>
 
 
