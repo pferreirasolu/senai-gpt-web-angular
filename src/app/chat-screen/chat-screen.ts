@@ -108,7 +108,7 @@ export class ChatScreen {
         {
           "parts": [
             {
-              "text": this.userMessage.value
+              "text": this.userMessage.value +". Me de uma resposta objetiva"
             }
           ]
 
@@ -125,8 +125,18 @@ export class ChatScreen {
       chatId: this.chatSelecionado.id,
       userId: "chatbot",
       text: respostaIAResponse.candidates[0].content.parts[0].text
-
-
     }
+    
+    
+    let newMessageIAResponse = await firstValueFrom(this.http.post("https://senai-gpt-api.azurewebsites.net/messages", newAnswerIA, {
+      headers: {
+        "content-type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("meuToken")
+      },
+
+    }));
+          await this.onChatClick(this.chatSelecionado);
+
+          this.userMessage.setValue("");
   }
 }
