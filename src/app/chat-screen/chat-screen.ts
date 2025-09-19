@@ -90,5 +90,43 @@ export class ChatScreen {
       text: this.userMessage.value
 
     };
+
+    let newMessageUserResponse = await firstValueFrom(this.http.post("https://senai-gpt-api.azurewebsites.net/messages", newMessageUser, {
+      headers: {
+        "content-type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("meuToken")
+      },
+
+    }));
+
+    await this.onChatClick(this.chatSelecionado);
+
+    //enviar mensagem para a IA responder.
+
+    let respostaIAResponse = await firstValueFrom(this.http.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent", {
+      "contents": [
+        {
+          "parts": [
+            {
+              "text": this.userMessage.value
+            }
+          ]
+
+        }
+      ]
+    },{
+      headers:{
+        "content-type":"application;json",
+        "x-goog-api-key":"AIzaSyDV2HECQZLpWJrqCKEbuq7TT5QPKKdLOdo"
+      }
+    })) as any;
+
+    let newAnswerIA = {
+      chatId: this.chatSelecionado.id,
+      userId: "chatbot",
+      text: respostaIAResponse.candidates[0].content.parts[0].text
+
+
+    }
   }
 }
