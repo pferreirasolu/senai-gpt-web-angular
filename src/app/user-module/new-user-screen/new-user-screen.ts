@@ -62,6 +62,8 @@ export class NewUserScreen {
           newPassword: this.newUserScreenLoginForm.value.newPassword
         })
       });
+
+
     }
 
   }
